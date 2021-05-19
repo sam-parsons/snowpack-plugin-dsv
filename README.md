@@ -63,28 +63,6 @@ console.log(fruit);
 // ]
 ```
 
-### `processRow`
-
-Type: `Function`<br>
-Default: `null`
-
-Specifies a function which processes each row in the parsed array. The function can either manipulate the passed `row`, or return an entirely new row object.
-
-This option could be used for converting numeric `string` values into `Number` values. – for example turning numeric values into numbers, e.g.
-
-```js
-dsv({
-  processRow: (row, id) => {
-    Object.keys(row).forEach((key) => {
-      var value = row[key];
-      row[key] = isNaN(+value) ? value : +value;
-    });
-  },
-});
-```
-
 ## Meta
-
-[CONTRIBUTING](./.github/CONTRIBUTING.md)
 
 [LICENSE (MIT)](./LICENSE)
