@@ -6,6 +6,7 @@
   "scripts": {
     "test": "jest"
   },
+  "files": ["index.js"],
   "author": "Sam Parsons <samparsons269@gmail.com> (http://sam-parsons.github.io/)",
   "license": "MIT",
   "devDependencies": {
