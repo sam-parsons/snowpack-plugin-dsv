@@ -1,12 +1,14 @@
 {
   "name": "snowpack-plugin-dsv",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "jest"
   },
-  "files": ["index.js"],
+  "files": [
+    "index.js"
+  ],
   "author": "Sam Parsons <samparsons269@gmail.com> (http://sam-parsons.github.io/)",
   "license": "MIT",
   "devDependencies": {
