@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snowpack dsv plugin load function return value matches snapshot with csv input 1`] = `
+"export default [ { type:\\"furry\\",
+    \\" value;\\":\\" true;\\" },
+  { type:\\"fuzzy\\",
+    \\" value;\\":\\" false;\\" } ];"
+`;
+
+exports[`snowpack dsv plugin load function return value matches snapshot with tsv input 1`] = `
+"export default [ { powerful:\\"stand\\",
+    drink:\\"orange\\",
+    would:\\"slightly\\",
+    say:\\"none\\",
+    parallel:\\"tongue\\",
+    note:\\"sudden\\" },
+  { powerful:\\"solve\\",
+    drink:\\"aid\\",
+    would:\\"ourselves\\",
+    say:\\"dear\\",
+    parallel:\\"from\\",
+    note:\\"corn\\" },
+  { powerful:\\"beneath\\",
+    drink:\\"hardly\\",
+    would:\\"count\\",
+    say:\\"yesterday\\",
+    parallel:\\"broad\\",
+    note:\\"hair\\" },
+  { powerful:\\"should\\",
+    drink:\\"sing\\",
+    would:\\"rocket\\",
+    say:\\"mice\\",
+    parallel:\\"scale\\",
+    note:\\"page\\" },
+  { powerful:\\"disappear\\",
+    drink:\\"additional\\",
+    would:\\"cell\\",
+    say:\\"steam\\",
+    parallel:\\"map\\",
+    note:\\"second\\" } ];"
+`;
