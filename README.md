@@ -65,4 +65,4 @@ console.log(fruit);
 
 ## Meta
 
-[LICENSE (MIT)](./LICENSE)
+[LICENSE (MIT)](./LICENSE.md)
