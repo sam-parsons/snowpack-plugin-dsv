@@ -25,7 +25,7 @@ npm install --save-dev snowpack-plugin-dsv
 
 ## Usage
 
-Create a `snowpack.config.js` [configuration file](https://www.snowpack.dev/reference/configuration) and import the plugin:
+Create a `snowpack.config.js` [configuration file](https://www.snowpack.dev/reference/configuration) and import the plugin to automatically detect and parse `.csv`, `.tsv`, and `.psv` files:
 
 ```js
 const dsv = require('snowpack-plugin-dsv');
@@ -36,6 +36,17 @@ module.exports = {
     src: { url: '/dist' },
   },
   plugins: ['snowpack-plugin-dsv'],
+};
+```
+
+For other types of delineations, set the `delineator` property of the options object to the appropriate character. Note: You will have to provide the array of custom file extensions in the options object OR set the file extension of your custom files to `.dsv`.
+
+```js
+const dsv = require('snowpack-plugin-dsv');
+
+module.exports = {
+  mount: { ... },
+  plugins: [['snowpack-plugin-dsv', { delineator: '~', fileExts: ['.~sv'] }]],
 };
 ```
 
