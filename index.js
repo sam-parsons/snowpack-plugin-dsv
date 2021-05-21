@@ -9,6 +9,7 @@ module.exports = function plugin(config, options) {
     '.csv': csvParse,
     '.tsv': tsvParse,
     '.dsv': dsvFormat,
+    '.psv': dsvFormat('|'),
   };
 
   return {
@@ -20,10 +21,17 @@ module.exports = function plugin(config, options) {
     load({ filePath, fileExt }) {
       const file = fs.readFileSync(filePath);
       let rows;
+      // handle custom delineators
       if (options.delimiter) {
         const parser = parsers['.dsv'](options.delimiter);
         rows = parser.parseRows(file.toString());
-      } else {
+      }
+      // use dsvFormat with | delineator
+      else if (fileExt === '.psv') {
+        rows = parsers[fileExt].parseRows(file.toString());
+      }
+      // handle csv and tsv parsing
+      else {
         rows = parsers[fileExt](file.toString());
       }
       return `export default ${toSource(rows)};`;
