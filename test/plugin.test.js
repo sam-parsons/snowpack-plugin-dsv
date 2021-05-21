@@ -22,4 +22,22 @@ describe('snowpack dsv plugin', () => {
     });
     expect(res).toMatchSnapshot();
   });
+
+  test('load function return value matches snapshot with psv input', () => {
+    const obj = plugin({}, { delimiter: '|' });
+    const res = obj.load({
+      fileExt: '.psv',
+      filePath: './test/fixtures/data.psv',
+    });
+    expect(res).toMatchSnapshot();
+  });
+
+  test('load function return value matches snapshot with dsv input', () => {
+    const obj = plugin({}, { delimiter: ':' });
+    const res = obj.load({
+      fileExt: '.dsv',
+      filePath: './test/fixtures/data.dsv',
+    });
+    expect(res).toMatchSnapshot();
+  });
 });
