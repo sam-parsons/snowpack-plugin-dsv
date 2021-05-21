@@ -1,2 +1,0 @@
-- v0.0.5 - custom deliniations
-- v0.0.6 - processRows mapping
