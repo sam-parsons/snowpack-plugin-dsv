@@ -32,11 +32,20 @@ describe('snowpack dsv plugin', () => {
     expect(res).toMatchSnapshot();
   });
 
-  test('load function return value matches snapshot with dsv input', () => {
+  test('load function return value matches snapshot with default dsv input', () => {
     const obj = plugin({}, { delimiter: ':' });
     const res = obj.load({
       fileExt: '.dsv',
       filePath: './test/fixtures/data.dsv',
+    });
+    expect(res).toMatchSnapshot();
+  });
+
+  test('load function return value matches snapshot with custom file extension', () => {
+    const obj = plugin({}, { delimiters: ['.~sv'] });
+    const res = obj.load({
+      fileExt: '.dsv',
+      filePath: './test/fixtures/data.~sv',
     });
     expect(res).toMatchSnapshot();
   });

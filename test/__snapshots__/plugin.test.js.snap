@@ -7,28 +7,31 @@ exports[`snowpack dsv plugin load function return value matches snapshot with cs
     \\" value;\\":\\" false;\\" } ];"
 `;
 
-exports[`snowpack dsv plugin load function return value matches snapshot with dsv input 1`] = `
-"export default [ [ \\"column1\\",
-    \\"column2\\",
-    \\"column3\\" ],
-  [ \\"val1\\",
-    \\"val2\\",
-    \\"val3\\" ],
-  [ \\"val4\\",
-    \\"val5\\",
-    \\"val6\\" ] ];"
+exports[`snowpack dsv plugin load function return value matches snapshot with custom file extension 1`] = `
+"export default [ { column1:\\"val1\\",
+    column2:\\"val2\\",
+    column3:\\"val3\\" },
+  { column1:\\"val4\\",
+    column2:\\"val5\\",
+    column3:\\"val6\\" } ];"
+`;
+
+exports[`snowpack dsv plugin load function return value matches snapshot with default dsv input 1`] = `
+"export default [ { column1:\\"val1\\",
+    column2:\\"val2\\",
+    column3:\\"val3\\" },
+  { column1:\\"val4\\",
+    column2:\\"val5\\",
+    column3:\\"val6\\" } ];"
 `;
 
 exports[`snowpack dsv plugin load function return value matches snapshot with psv input 1`] = `
-"export default [ [ \\"column1\\",
-    \\"column2\\",
-    \\"column3\\" ],
-  [ \\"val1\\",
-    \\"val2\\",
-    \\"val3\\" ],
-  [ \\"val4\\",
-    \\"val5\\",
-    \\"val6\\" ] ];"
+"export default [ { column1:\\"val1\\",
+    column2:\\"val2\\",
+    column3:\\"val3\\" },
+  { column1:\\"val4\\",
+    column2:\\"val5\\",
+    column3:\\"val6\\" } ];"
 `;
 
 exports[`snowpack dsv plugin load function return value matches snapshot with tsv input 1`] = `
