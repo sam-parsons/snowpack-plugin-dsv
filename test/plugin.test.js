@@ -24,7 +24,7 @@ describe('snowpack dsv plugin', () => {
   });
 
   test('load function return value matches snapshot with psv input', () => {
-    const obj = plugin({}, { delimiter: '|' });
+    const obj = plugin();
     const res = obj.load({
       fileExt: '.psv',
       filePath: './test/fixtures/data.psv',
