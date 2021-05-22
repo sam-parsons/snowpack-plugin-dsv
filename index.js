@@ -5,6 +5,10 @@ const fs = require('fs');
 module.exports = function plugin(config, options) {
   options = Object.assign({}, options);
 
+  const processRows = options.processRows
+    ? options.processRows
+    : function () {};
+
   const delimiters = options.delimiters ? options.delimiters : [];
 
   const parsers = {
@@ -43,11 +47,14 @@ module.exports = function plugin(config, options) {
       }
       // handle custom file extensions
       else {
-        // fileExt = '.~sv' -- delimiter = '~'
+        // fileExt = '.~sv' --> fileExt[1] => '~'
         const delimiter = fileExt[1];
         const parser = parsers['.dsv'](delimiter);
         rows = parser.parse(file.toString());
       }
+
+      // modify rows before output
+      if (options.processRows) rows.forEach(options.processRows);
 
       return `export default ${toSource(rows)};`;
     },
