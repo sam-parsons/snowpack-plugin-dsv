@@ -42,8 +42,6 @@ module.exports = {
 For other types of delimiters, set the `delimiter` property of the options object to the appropriate character. Note: You will have to set the file extension of your custom files to `.dsv`.
 
 ```js
-const dsv = require('snowpack-plugin-dsv');
-
 module.exports = {
   mount: { ... },
   plugins: [['snowpack-plugin-dsv', { delimiter: '~' }]],
@@ -53,8 +51,6 @@ module.exports = {
 If you would like to use multiple files with different delimiters, populate the `delimiters` array with the appropriate file extensions. Note: Make sure the second character of the custom file <i>is</i> the delimiter used in the data. Ex: If delimiting by `~`, the file extension should be `.~sv`.
 
 ```js
-const dsv = require('snowpack-plugin-dsv');
-
 module.exports = {
   mount: { ... },
   plugins: [['snowpack-plugin-dsv', { delimiters: ['.~sv', '.%sv'] }]],
