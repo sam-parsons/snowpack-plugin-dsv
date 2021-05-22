@@ -32,13 +32,19 @@ module.exports = function plugin(config, options) {
         rows = parsers[fileExt]('|').parse(file.toString());
       }
       // handle .dsv files with custom delimiter
-      else if (options.delimiter && fileExt === '.dsv') {
+      else if (fileExt === '.dsv') {
+        if (!options.delimiter)
+          return new Error(
+            'No delimited provided for use with .dsv file',
+            filePath
+          );
         const parser = parsers['.dsv'](options.delimiter);
         rows = parser.parse(file.toString());
       }
       // handle custom file extensions
       else {
-        const delimiter = filePath.slice(-3, -2);
+        // fileExt = '.~sv' -- delimiter = '~'
+        const delimiter = fileExt[1];
         const parser = parsers['.dsv'](delimiter);
         rows = parser.parse(file.toString());
       }
