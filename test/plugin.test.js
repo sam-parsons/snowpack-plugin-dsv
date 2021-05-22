@@ -80,4 +80,23 @@ describe('snowpack dsv plugin', () => {
     });
     expect(resI).toEqual(resII);
   });
+
+  test('uses processRows to alter output', () => {
+    const obj = plugin(
+      {},
+      {
+        processRows: (row, id) => {
+          Object.keys(row).forEach((key, id) => {
+            let value = row[key].trim();
+            row[key] = isNaN(Number(value)) ? value : Number(value);
+          });
+        },
+      }
+    );
+    const res = obj.load({
+      fileExt: '.csv',
+      filePath: './test/fixtures/prdata.csv',
+    });
+    expect(res).toMatchSnapshot();
+  });
 });

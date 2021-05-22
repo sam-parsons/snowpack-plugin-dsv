@@ -1,10 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`snowpack dsv plugin load function return value matches snapshot with csv input 1`] = `
-"export default [ { type:\\"furry\\",
-    \\" value;\\":\\" true;\\" },
-  { type:\\"fuzzy\\",
-    \\" value;\\":\\" false;\\" } ];"
+"export default [ { type:\\"apples\\",
+    \\" count\\":\\" 7\\" },
+  { type:\\"pears\\",
+    \\" count\\":\\" 4\\" },
+  { type:\\"bananas\\",
+    \\" count\\":\\" 5\\" } ];"
 `;
 
 exports[`snowpack dsv plugin load function return value matches snapshot with custom file extension 1`] = `
@@ -65,4 +67,13 @@ exports[`snowpack dsv plugin load function return value matches snapshot with ts
     say:\\"steam\\",
     parallel:\\"map\\",
     note:\\"second\\" } ];"
+`;
+
+exports[`snowpack dsv plugin uses processRows to alter output 1`] = `
+"export default [ { type:\\"apples\\",
+    \\" count\\":7 },
+  { type:\\"pears\\",
+    \\" count\\":4 },
+  { type:\\"bananas\\",
+    \\" count\\":5 } ];"
 `;
