@@ -1,7 +1,7 @@
 {
   "name": "snowpack-plugin-dsv",
   "version": "0.1.0",
-  "description": "",
+  "description": "snowpack plugin that converts .csv and .tsv files into js modules with d3-dsv.",
   "main": "index.js",
   "scripts": {
     "test": "jest"
